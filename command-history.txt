@@ -1,0 +1,500 @@
+   12  git status
+   13  git add profile
+   14  git commit profile/
+   15  cd Downloads/anthony/sra-anthony-primavera/more-than-meets-the-eye/
+   16  git status
+   17  git status
+   18  git add profile/
+   19  git commit -m "First draft of the profile class."
+   20  git push
+   21  git status
+   22  git restore --staged profile/profile.py
+   23  git restore --staged profile/profile.py
+   24  git status
+   25  git restore profile/
+   26  git status
+   27  git rm profile/
+   28  git status
+   29  git restore --staged profile/profile.py
+   30  git status
+   31  git status
+   32  git add profile/
+   33  git commit -m "First draft of profile class."
+   34  git status
+   35  git push
+   36  git fetch origin
+   37  git checkout -b "22-filescanner-refactor-generalize-code-to-be-able-to-search-based-on-a-list-of-provided-file" "origin/22-filescanner-refactor-generalize-code-to-be-able-to-search-based-on-a-list-of-provided-file"
+   38  git status
+   39  git add filescanner/filescanner.py 
+   40  git commit -m "Applied suggested changes to code in order to allow definable search parameters."
+   41  git push
+   42  git fetch origin
+   43  git checkout -b "21-add-device-metadata-to-dictionary-passing-information-to-client-socket-to-server-connection" "origin/21-add-device-metadata-to-dictionary-passing-information-to-client-socket-to-server-connection"
+   44  git pull
+   45  git fetch origin
+   46  git checkout -b "21-add-device-metadata-to-dictionary-passing-information-to-client-socket-to-server-connection" "origin/21-add-device-metadata-to-dictionary-passing-information-to-client-socket-to-server-connection"
+   47  git status
+   48  git restore profiletrackingtool.py
+   49  git status
+   50  git fetch origin
+   51  git checkout -b "21-add-device-metadata-to-dictionary-passing-information-to-client-socket-to-server-connection" "origin/21-add-device-metadata-to-dictionary-passing-information-to-client-socket-to-server-connection"
+   52  git fetch origin
+   53  git checkout -b "18-create-a-profile-class-used-create-multiple-profile-objects" "origin/18-create-a-profile-class-used-create-multiple-profile-objects"
+   54  git checkout -b "18-create-a-profile-class-used-create-multiple-profile-objects" "origin/18-create-a-profile-class-used-create-multiple-profile-object
+   55  git switch "18-create-a-profile-class-used-create-multiple-profile-objects" "origin/18-create-a-profile-class-used-create-multiple-profile-objects"
+   56  git switch "18-create-a-profile-class-used-create-multiple-profile-objects"
+   57  git status
+   58  git restore SystemScanner/InfoGrabber.py
+   59  git switch "18-create-a-profile-class-used-create-multiple-profile-objects"
+   60  git pull
+   61  git status
+   62  git profile/profile.py
+   63  git add profile/profile.py
+   64  git commit -m "Added test features and updated a couple modules to return changed variables."
+   65  git push
+   66  git pull
+   67  git status
+   68  git add profile/profile\ copy.py 
+   69  git commit -m "Reworking the profile class in a separate copy to incorporate receiving nested lists."
+   70  git push
+   71  git pull
+   72  git status
+   73  git add profile/
+   74  git status
+   75  git commit -m "created a module to return a sorted list."
+   76  git push
+   77  git status
+   78  git add profile/profile\ copy.py 
+   79  git commit -m "worked on finding a utc offset, method is still incomplete, but will print the time difference between timestamps."
+   80  git push
+   81  cd Downloads/anthony/sra-anthony-primavera/
+   82  ls
+   83  cd C\ Programming/ToTurnIn/
+   84  git fetch origin
+   85  git checkout -b "803-c-programming-fileio" "origin/803-c-programming-fileio"
+   86  git status
+   87  git add FileIO/
+   88  git commit -m "Turning in grocery exercise."
+   89  git status
+   90  git push
+   91  git status
+   92  git fetch origin
+   93  git checkout -b "803-c-programming-fileio" "origin/803-c-programming-fileio"
+   94  git checkout -b "804-c-programming-stacks-exercises" "origin/804-c-programming-stacks-exercises"
+   95  git status
+   96  git add Stacks/
+   97  git commit -m "Completed Stacks Exercises."
+   98  git push
+   99  git fetch origin
+  100  git checkout -b "805-c-programming-queues" "origin/805-c-programming-queues"
+  101  git status
+  102  git add Queues/
+  103  git commit -m "Completed Queues Exercises."
+  104  git push
+  105  git fetch origin
+  106  git checkout -b "806-c-programming-trees" "origin/806-c-programming-trees"
+  107  git status
+  108  git add Trees/
+  109  git commit -m "Completed questions and exercise."
+  110  git push
+  111  git switch master
+  112  git pull -p
+  113  #include <stdio.h>
+  114  #include <stdlib.h>
+  115  #include <stdbool.h>
+  116  /*
+  117  Investment Portfolio
+  118  Symbol   Shares   Price    Value
+  119  GOOG     1000     1801.19  1801189.94
+  120  APPLE    1000     1128.77  1128770.02
+  121  */
+  122  struct node{
+  123      char *symbol;
+  124      int shares;
+  125      float price;
+  126      float value;
+  127      struct node *next;
+  128  };
+  129  void append_data(struct node *head, char symbol[], int shares, float price, float value){
+  130      struct node *ptr, *temp;
+  131      ptr = head;
+  132      temp = (struct node*)malloc(sizeof(struct node));
+  133      temp->symbol = symbol;
+  134      temp->shares = shares;
+  135      temp->price = price;
+  136      temp->value = value;
+  137      if(head == NULL){
+  138          head = temp;
+  139      }
+  140      else{
+  141          while(ptr->next != NULL);         {             ptr = ptr->next;         };         ptr->next = temp;     }
+  142  }
+  143  void print_data(struct node *head){
+  144      if(head == NULL);         printf("Linked list is empty.\n");
+  145      struct node *ptr = NULL;
+  146      ptr = head;
+  147      printf("Symbol   Shares   Price    Value\n");
+  148      while(ptr != NULL){
+  149          printf("%s\t%d\t%.2f\t%.2f\n", ptr->symbol, ptr->shares, ptr->price, ptr->value);
+  150          ptr = ptr->next;
+  151      }
+  152      printf("\n");
+  153  }
+  154  int main(){
+  155      struct node *portfolio = (struct node*)malloc(sizeof(struct node));
+  156      portfolio->symbol = "GOOG";
+  157      portfolio->shares = 1000;
+  158      portfolio->price = 1801.19;
+  159      portfolio->value = 1801189.94;
+  160      // append_data(portfolio, "GOOG", 1000, 1801.19, 1801189.94);
+  161      append_data(portfolio, "APPLE", 1000, 1128.77, 1128770.02);
+  162      print_data(portfolio);
+  163      return 0;
+  164  git fetch origin
+  165  git checkout -b "807-c-programming-linked-lists" "origin/807-c-programming-linked-lists"
+  166  git status
+  167  git add Linked\ Lists/
+  168  git commit -m "Completed linked list exercises."
+  169  git push
+  170  git fetch origin
+  171  git checkout -b "808-c-programming-search-algorithms" "origin/808-c-programming-search-algorithms"
+  172  git status
+  173  git add Searching\ Algorithims/
+  174  git commit -m "Completed searching algorithms exercises."
+  175  git push
+  176  #!/bin/bash
+  177  npx http-server ./ --port 8080 -a 0.0.0.0 -o index.html
+  178  #!/usr/bin/env bash
+  179  echo "Downloading game, this will take some time..."
+  180  git clone -b releases --single-branch https://github.com/infinitefusion/infinitefusion-e18.git
+  181  mv ./version_control/species.dat	./infinitefusion-e18/Data
+  182  echo "Moving Sprites..."
+  183  rm -f -r ./infinitefusion-e18/Graphics/CustomBattlers
+  184  mv ./version_control/CustomBattlers	./infinitefusion-e18/Graphics
+  185  echo "Cleaning up installation files..."
+  186  rm -f install.bat
+  187  rm -f git_clone.sh
+  188  ./infinitefusion-e18/Game.exe &
+  189  help
+  190  D:
+  191  cd
+  192  cd D:/Documents
+  193  cd D:
+  194  cd/users
+  195  cd/Users
+  196  cd Users
+  197  cd NSC
+  198  ls
+  199  cd diath
+  200  cd NSC
+  201  ls
+  202  cd IT115 Git-Hub
+  203  cd 'IT115 Git-Hub'
+  204  mkdir html-css-practice
+  205  cd html-css-practice/
+  206  mkdir css
+  207  mkdir images
+  208  cd css
+  209  .
+  210  . .
+  211  clear
+  212  cd \\
+  213  cdUsers/diath/NSC/'IT115 Git-Hub'/html-css-practice
+  214  cd Users/diath/NSC/'IT115 Git-Hub'/html-css-practice
+  215  touch anthony_profile.html
+  216  ls
+  217  touch css style.css
+  218  touch images avatar.png
+  219  clear
+  220  cd \
+  221  cd d:/Users/diath/NSC
+  222  ls
+  223  cd IT115\ Git-Hub/
+  224  ls
+  225  cd html-css-practice/
+  226  cd .
+  227  cd ..
+  228  cd html-css-practice/
+  229  ls
+  230  cd images/
+  231  ls
+  232  clear
+  233  cd ..
+  234  git init
+  235  git config user.name "Anthony Primavera"
+  236  git config user.email "anthonymprimavera3@gmail.com"
+  237  git config --list
+  238  git add .
+  239  git commit -m "Initial commit"
+  240  git status
+  241  git branch profileUpdate_AP
+  242  git checkout profileUpdate_AP
+  243  git add .
+  244  git status
+  245  git commit -m "Changed html file"
+  246  git add .
+  247  git status
+  248  git commit -m "Edited html as the image was not rendering and populated the css file"
+  249  git --version
+  250  git clonene https://github.com/Rammet/IT115.git
+  251  git clone https://github.com/Rammet/IT115.git
+  252  ls
+  253  cd IT115
+  254  ls
+  255  cat > README.md
+  256  cat README.md 
+  257  cat > README.md 
+  258  cat README.md 
+  259  git add .
+  260  git status
+  261  git commit -m "Added first and last name to readme"
+  262  git status
+  263  git push origin main
+  264  history
+  265  make -v
+  266  version
+  267  cd D:\Users\diath\NSC\IT115 Git-Hub
+  268  cd D:\Users\diath\NSC\IT115 Git-Hub
+  269  cd D:/Users/diath/NSC
+  270  pwd
+  271  cd d:
+  272  ls
+  273  cd Users/
+  274  ls
+  275  cd diath/
+  276  ls
+  277  cd NSC/
+  278  ls
+  279  cd IT115\ Git-Hub/
+  280  git clone https://github.com/Rammet/team-landing-page.git
+  281  pwd
+  282  ls
+  283  cd team-landing-page/
+  284  git branch
+  285  ls
+  286  git branch adding-docs-and-planning_AP
+  287  git checkout adding-docs-and-planning_AP 
+  288  pwd
+  289  ls
+  290  mkdir -p docs/planning.md
+  291  ls
+  292  cd docs/
+  293  ls
+  294  cd planning.md/
+  295  cd .
+  296  ls
+  297  cd ..
+  298  ls
+  299  rm -R planning.md/
+  300  ls
+  301  git branch
+  302  git add planning.md
+  303  cat planning.md
+  304  add planning.md
+  305  git add planning.md
+  306  touch planning.md
+  307  ls
+  308  git add .
+  309  git status
+  310  cd ..
+  311  ls
+  312  git add .
+  313  git status
+  314  git commit -m "Added docs/planning.md"
+  315  git branch
+  316  git status
+  317  git push
+  318  pwd
+  319  git branch main
+  320  git checkout main
+  321  ls
+  322  history
+  323  ls
+  324  cat README.md 
+  325  git branch
+  326  git checkout adding-docs-and-planning_AP 
+  327  ls
+  328  git add .
+  329  git status
+  330  git push origin adding-docs-and-planning_AP 
+  331  git checkout main
+  332  git checkout adding-docs-and-planning_AP 
+  333  makdir test
+  334  mkdir test
+  335  git add .
+  336  git status
+  337  ls
+  338  git commit
+  339  touch test
+  340  ls
+  341  cd test
+  342  ls
+  343  touch test2
+  344  ls
+  345  cd ..
+  346  ls
+  347  git status
+  348  git add .
+  349  ls
+  350  git commit
+  351  git status
+  352  git restore
+  353  git restore --staged
+  354  git restore --staged test
+  355  ls
+  356  rm -R test
+  357  ls
+  358  git status
+  359  git checkout main
+  360  git pull origin main 
+  361  ls
+  362  cat index.html 
+  363  cd ..
+  364  ls
+  365  cd html-css-practice/
+  366  ls
+  367  cd images/
+  368  ls
+  369  cd ..
+  370  cd ..
+  371  cd team-landing-page/
+  372  ls
+  373  git branch AnthonyP
+  374  git checkout AnthonyP
+  375  cp ./html-css-practice/images/avatar.png
+  376  cp ./html-css-practice/images/avatar.png images
+  377  ls
+  378  cp './html-css-practice/images/avatar.png' images
+  379  ls
+  380  cp ./html-css-practice/images/avatar.png images/avatars/
+  381  mv ./html-css-practice/images/avatar.png /images/avatars
+  382  ls
+  383  cd images/avatars
+  384  ls
+  385  cd ..
+  386  cd ..
+  387  ls
+  388  cd profiles/
+  389  ls
+  390  cd ..
+  391  ls
+  392  git status
+  393  git add .
+  394  git status
+  395  git commit -m "Added my avatar and profile html from last week"
+  396  git push origin
+  397  git push origin AnthonyP 
+  398  clear
+  399  cd ..
+  400  cd ..
+  401  mkdir IT135
+  402  cd IT135
+  403  git status
+  404  git clone https://github.com/Rammet/learning-linux-command-line-3005201.git
+  405  ls
+  406  cd learning-linux-command-line-3005201/
+  407  ls
+  408  cat commands.md 
+  409  less commands.md
+  410  git status
+  411  git checkout -b learning-linux
+  412  sudo apt install gcc make perl
+  413  sudo apt install gcc make per1
+  414  touch test.txt
+  415  cat > test.txt 
+  416  ls
+  417  pwd
+  418  cd d:
+  419  ls
+  420  cd Users/diath
+  421  ls
+  422  cd NSC
+  423  ls
+  424  cd 'IT115 Git-Hub'/
+  425  ls
+  426  cd team-landing-page/
+  427  ls
+  428  git clone https://github.com/Rammet/team-landing-page.git
+  429  git status
+  430  git pull
+  431  ls
+  432  cd team-landing-page/
+  433  ls
+  434  git checkout
+  435  git checkout AnthonyP
+  436  ls
+  437  cd profiles/
+  438  ls
+  439  cd ..
+  440  ls
+  441  cd ..
+  442  ls
+  443  cd profiles/
+  444  ls
+  445  git checkout
+  446  pwd
+  447  cd ..
+  448  git checkout main
+  449  ls
+  450  cd profiles/
+  451  ls
+  452  cd ..
+  453  git pull
+  454  ls
+  455  cd profiles/
+  456  ls
+  457  cd ..
+  458  cd d:Users/diath
+  459  ls
+  460  cd NSC
+  461  ls
+  462  cd IT115\ Git-Hub/
+  463  ls
+  464  cd team-landing-page/
+  465  ls
+  466  git checkout -b anthony-index-html-addition
+  467  git pull
+  468  ls
+  469  git status
+  470  rm -r team-landing-page/
+  471  ls
+  472  cd team-landing-page/
+  473  ls
+  474  cd ..
+  475  ls
+  476  rm -R team-landing-page/
+  477  ls
+  478  nano index.html 
+  479  cat index.html 
+  480  ls
+  481  git commit -m "Added html lines to include my profile"
+  482  git add.
+  483  git add .
+  484  git status
+  485  git commit -m "Added html lines to include my profile"
+  486  git push origin 
+  487  git push -f origin 
+  488  git push origin anthony-index-html-addition 
+  489  git checkout main
+  490  cd ..
+  491  git clone https://github.com/Rammet/SDLC_Practice_in_Class.git
+  492  ls
+  493  cd SDLC_Practice_in_Class/
+  494  git branch anthony_SDLC_practice
+  495  git checkout anthony_SDLC_practice 
+  496  ls
+  497  less README.md 
+  498  cat README.md 
+  499  nano README.md 
+  500  cat README.md 
+  501  cd d:/Users/diath/NSC
+  502  ls
+  503  cd 'IT115 Git-Hub'/
+  504  ls
+  505  cd SDLC_Practice_in_Class/
+  506  cat README.md 
+  507  git add README.md 
+  508  git status
+  509  git commit -m "add markdown ref to the readme file"
+  510  git push origin anthony_SDLC_practice 
+  511  history > command-history.txt
